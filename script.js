@@ -23,27 +23,27 @@ const CATEGORIES = ["Pizzas", "Hambúrgueres", "Porções", "Bebidas"];
 
 const PRODUCTS = [
   // --- Pizzas ---
-  { category: "Pizzas", name: "Margherita", desc: "Molho de tomate, mussarela, tomate fresco e manjericão.", price: 49.9, image: "images/pizza-margherita.jpg" },
-  { category: "Pizzas", name: "Calabresa", desc: "Calabresa fatiada, cebola e azeitonas.", price: 52.9, image: "images/pizza-calabresa.jpg" },
-  { category: "Pizzas", name: "Quatro Queijos", desc: "Mussarela, provolone, gorgonzola e parmesão.", price: 58.9, image: "images/pizza-quatro-queijos.jpg" },
-  { category: "Pizzas", name: "Frango com Catupiry", desc: "Frango desfiado temperado e catupiry cremoso.", price: 56.9, image: "images/pizza-frango-catupiry.jpg" },
-  { category: "Pizzas", name: "Portuguesa", desc: "Presunto, ovos, cebola, ervilha e mussarela.", price: 55.9, image: "images/pizza-portuguesa.jpg" },
-  { category: "Pizzas", name: "Chocolate com Morango", desc: "Pizza doce com chocolate ao leite e morangos.", price: 54.9, image: "images/pizza-chocolate-morango.jpg" },
+  { category: "Pizzas", name: "Margherita", desc: "Molho de tomate, mussarela, tomate fresco e manjericão.", price: 49.9, image: "pizza-margherita.jpg" },
+  { category: "Pizzas", name: "Calabresa", desc: "Calabresa fatiada, cebola e azeitonas.", price: 52.9, image: "pizza-calabresa.jpg" },
+  { category: "Pizzas", name: "Quatro Queijos", desc: "Mussarela, provolone, gorgonzola e parmesão.", price: 58.9, image: "pizza-quatro-queijos.jpg" },
+  { category: "Pizzas", name: "Frango com Catupiry", desc: "Frango desfiado temperado e catupiry cremoso.", price: 56.9, image: "pizza-frango-catupiry.jpg" },
+  { category: "Pizzas", name: "Portuguesa", desc: "Presunto, ovos, cebola, ervilha e mussarela.", price: 55.9, image: "pizza-portuguesa.jpg" },
+  { category: "Pizzas", name: "Chocolate com Morango", desc: "Pizza doce com chocolate ao leite e morangos.", price: 54.9, image: "pizza-chocolate-morango.jpg" },
   // --- Hambúrgueres ---
-  { category: "Hambúrgueres", name: "Clássico Bella", desc: "Burger 160g, queijo, alface, tomate e molho da casa.", price: 28.9, image: "images/burger-classico.jpg" },
-  { category: "Hambúrgueres", name: "Cheddar Bacon", desc: "Burger 160g, cheddar cremoso e bacon crocante.", price: 33.9, image: "images/burger-cheddar-bacon.jpg" },
-  { category: "Hambúrgueres", name: "Frango Crocante", desc: "Filé de frango empanado, queijo e maionese temperada.", price: 29.9, image: "images/burger-frango.jpg" },
-  { category: "Hambúrgueres", name: "Duplo Smash", desc: "Dois smashes, queijo prato e cebola caramelizada.", price: 38.9, image: "images/burger-duplo.jpg" },
+  { category: "Hambúrgueres", name: "Clássico Bella", desc: "Burger 160g, queijo, alface, tomate e molho da casa.", price: 28.9, image: "burger-classico.jpg" },
+  { category: "Hambúrgueres", name: "Cheddar Bacon", desc: "Burger 160g, cheddar cremoso e bacon crocante.", price: 33.9, image: "burger-cheddar-bacon.jpg" },
+  { category: "Hambúrgueres", name: "Frango Crocante", desc: "Filé de frango empanado, queijo e maionese temperada.", price: 29.9, image: "burger-frango.jpg" },
+  { category: "Hambúrgueres", name: "Duplo Smash", desc: "Dois smashes, queijo prato e cebola caramelizada.", price: 38.9, image: "burger-duplo.jpg" },
   // --- Porções ---
-  { category: "Porções", name: "Batata Frita", desc: "Porção crocante e sequinha, com sal e orégano.", price: 24.9, image: "images/porcao-batata-frita.jpg" },
-  { category: "Porções", name: "Onion Rings", desc: "Anéis de cebola empanados e dourados.", price: 26.9, image: "images/porcao-onion-rings.jpg" },
-  { category: "Porções", name: "Calabresa Acebolada", desc: "Calabresa grelhada com cebola e pão.", price: 34.9, image: "images/porcao-calabresa-acebolada.jpg" },
-  { category: "Porções", name: "Frango a Passarinho", desc: "Pedaços de frango fritos e bem temperados.", price: 39.9, image: "images/porcao-frango-a-passarinho.jpg" },
+  { category: "Porções", name: "Batata Frita", desc: "Porção crocante e sequinha, com sal e orégano.", price: 24.9, image: "porcao-batata-frita.jpg" },
+  { category: "Porções", name: "Onion Rings", desc: "Anéis de cebola empanados e dourados.", price: 26.9, image: "porcao-onion-rings.jpg" },
+  { category: "Porções", name: "Calabresa Acebolada", desc: "Calabresa grelhada com cebola e pão.", price: 34.9, image: "porcao-calabresa-acebolada.jpg" },
+  { category: "Porções", name: "Frango a Passarinho", desc: "Pedaços de frango fritos e bem temperados.", price: 39.9, image: "porcao-frango-a-passarinho.jpg" },
   // --- Bebidas ---
-  { category: "Bebidas", name: "Refrigerante Lata", desc: "Lata 350ml, vários sabores.", price: 6.5, image: "images/bebida-refrigerante.jpg" },
-  { category: "Bebidas", name: "Refrigerante 2L", desc: "Garrafa 2 litros, ideal para dividir.", price: 14.9, image: "images/bebida-2l.jpg" },
-  { category: "Bebidas", name: "Suco Natural", desc: "Copo 400ml. Pergunte os sabores do dia.", price: 9.9, image: "images/bebida-suco.jpg" },
-  { category: "Bebidas", name: "Água Mineral", desc: "Garrafa 500ml, com ou sem gás.", price: 4.5, image: "images/bebida-agua.jpg" },
+  { category: "Bebidas", name: "Refrigerante Lata", desc: "Lata 350ml, vários sabores.", price: 6.5, image: "bebida-refrigerante.jpg" },
+  { category: "Bebidas", name: "Refrigerante 2L", desc: "Garrafa 2 litros, ideal para dividir.", price: 14.9, image: "bebida-2l.jpg" },
+  { category: "Bebidas", name: "Suco Natural", desc: "Copo 400ml. Pergunte os sabores do dia.", price: 9.9, image: "bebida-suco.jpg" },
+  { category: "Bebidas", name: "Água Mineral", desc: "Garrafa 500ml, com ou sem gás.", price: 4.5, image: "bebida-agua.jpg" },
 ];
 
 /* ---------- 3. FUNÇÕES ---------- */
