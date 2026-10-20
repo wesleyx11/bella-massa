@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bella Massa | Pizzaria e Hamburgueria</title>
+  <meta name="description" content="Cardápio da Bella Massa: pizzas, hambúrgueres, porções e bebidas. Peça pelo WhatsApp.">
+  <meta name="theme-color" content="#14281d">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========== CABEÇALHO / MENU DE NAVEGAÇÃO ========== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#inicio" class="logo" aria-label="Bella Massa - início">Bella Massa</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#contato">Contato</a>
+      <a href="#" class="btn btn--small js-whatsapp">Pedir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ========== PÁGINA INICIAL (HERO) ========== -->
+  <!-- Para usar uma foto de fundo: troque images/hero.jpg (veja .hero no style.css) -->
+  <section class="hero" id="inicio">
+    <div class="container hero__content">
+      <h1 class="hero__title">Bella Massa</h1>
+      <p class="hero__slogan">Sabor que faz você voltar</p>
+      <div class="hero__actions">
+        <a href="#cardapio" class="btn">Ver Cardápio</a>
+        <a href="#" class="btn btn--outline js-whatsapp">Pedir pelo WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CARDÁPIO ========== -->
+  <!-- Os produtos ficam em script.js (lista PRODUCTS) e são desenhados aqui -->
+  <section class="section" id="cardapio">
+    <div class="container">
+      <h2 class="section__title">Cardápio</h2>
+      <p class="section__lead">Escolha seu favorito e peça direto pelo WhatsApp.</p>
+
+      <div class="tabs" id="tabs" role="tablist" aria-label="Categorias do cardápio"></div>
+      <div class="grid" id="menuGrid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ========== SOBRE NÓS ========== -->
+  <section class="section section--alt" id="sobre">
+    <div class="container about">
+      <h2 class="section__title">Sobre nós</h2>
+      <div class="about__text">
+        <p>A Bella Massa nasceu do desejo de servir comida feita com cuidado, do começo ao fim. Nossa massa fermenta com calma, o molho é preparado todos os dias e cada pizza vai ao forno somente depois que o pedido é feito.</p>
+        <p>Selecionamos ingredientes frescos de fornecedores de confiança, e a mesma atenção vale para os hambúrgueres, as porções e as bebidas. Aqui você é recebido como em casa, seja para um jantar em família, um encontro com amigos ou um pedido para saborear no sofá.</p>
+        <p>Nosso compromisso é simples: sabor consistente, atendimento atencioso e o gosto de quero mais.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTATO / LOCALIZAÇÃO ========== -->
+  <!-- SUBSTITUA os textos [entre colchetes] pelos dados reais (veja também CONFIG no script.js) -->
+  <section class="section" id="contato">
+    <div class="container">
+      <h2 class="section__title">Onde estamos</h2>
+      <div class="info">
+        <article class="info__card">
+          <h3>Endereço</h3>
+          <address>[SUBSTITUIR: Rua, número, bairro]<br>[SUBSTITUIR: Cidade - UF, CEP]</address>
+        </article>
+        <article class="info__card">
+          <h3>Horário de funcionamento</h3>
+          <p>[SUBSTITUIR: Terça a domingo, 18h às 23h]<br>[SUBSTITUIR: Segunda: fechado]</p>
+        </article>
+        <article class="info__card">
+          <h3>Telefone / WhatsApp</h3>
+          <p id="phoneText">[SUBSTITUIR: (00) 00000-0000]</p>
+        </article>
+      </div>
+      <div class="info__actions">
+        <a href="https://www.google.com/maps" id="mapsBtn" class="btn" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>
+        <a href="#" class="btn btn--outline-dark js-whatsapp">Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year">2026</span> Bella Massa. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Botão flutuante do WhatsApp -->
+<a href="#" class="fab js-whatsapp" aria-label="Pedir pelo WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm0 18.200a8.200 8.200 0 0 1-4.200-1.200l-.3-.2-3 .8.8-2.900-.2-.3A8.200 8.200 0 1 1 12 20.200z"/><path d="M16.500 14.200c-.2-.1-1.400-.7-1.600-.8s-.4-.1-.5.100l-.7.900c-.1.200-.3.200-.5.100a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.200-.4.700-1.300.1-.2 0-.3 0-.4l-.7-1.700c-.2-.4-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.300c-.2.300-.9.900-.9 2.200s.9 2.500 1 2.700 1.800 2.800 4.400 3.800c2.200.8 2.600.7 3.100.6.500-.1 1.400-.6 1.600-1.200s.2-1.100.1-1.200z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>

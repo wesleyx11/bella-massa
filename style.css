@@ -1,0 +1,131 @@
+/* ==========================================================
+   BELLA MASSA - ESTILOS
+   1. Variáveis (cores e fontes)  2. Base  3. Componentes
+   4. Seções  5. Responsivo
+   ========================================================== */
+
+/* ---------- 1. VARIÁVEIS: edite aqui para mudar o visual ---------- */
+:root {
+  --basil: #14281d;       /* verde-manjericão (fundo principal) */
+  --basil-light: #1d3a2a; /* verde dos cards */
+  --tomato: #d6452b;      /* vermelho-tomate (botões) */
+  --tomato-dark: #b5351e;
+  --saffron: #e8b04a;     /* dourado (preços e destaques) */
+  --flour: #f6f2e9;       /* branco-farinha (textos) */
+  --ink: #1b1b18;         /* texto sobre fundo claro */
+  --font-title: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --radius: 14px;
+  --header-h: 64px;
+}
+
+/* ---------- 2. BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+body { margin: 0; font-family: var(--font-body); line-height: 1.6; color: var(--flour); background: var(--basil); }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; margin: 0; }
+:focus-visible { outline: 3px solid var(--saffron); outline-offset: 3px; }
+.container { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+
+/* ---------- 3. COMPONENTES ---------- */
+.btn {
+  display: inline-block; padding: .85rem 1.6rem; border-radius: 999px; border: 2px solid var(--tomato);
+  background: var(--tomato); color: #fff; font-weight: 700; text-decoration: none; text-align: center;
+  cursor: pointer; font-size: 1rem; font-family: inherit; transition: transform .2s, background .2s, color .2s;
+}
+.btn:hover { background: var(--tomato-dark); border-color: var(--tomato-dark); transform: translateY(-2px); }
+.btn--outline { background: transparent; border-color: var(--flour); }
+.btn--outline:hover { background: var(--flour); border-color: var(--flour); color: var(--basil); }
+.btn--outline-dark { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn--outline-dark:hover { background: var(--ink); border-color: var(--ink); color: var(--flour); }
+.btn--small { padding: .5rem 1.2rem; }
+
+/* Cabeçalho fixo */
+.header { position: fixed; inset: 0 0 auto 0; height: var(--header-h); z-index: 50; transition: background .3s, box-shadow .3s; }
+.header.is-scrolled { background: rgba(20, 40, 29, .96); box-shadow: 0 2px 16px rgba(0,0,0,.35); }
+.header__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: var(--font-title); font-size: 1.6rem; font-weight: 700; text-decoration: none; letter-spacing: .02em; }
+.nav { display: flex; align-items: center; gap: 1.8rem; }
+.nav a:not(.btn) { text-decoration: none; font-weight: 500; position: relative; }
+.nav a:not(.btn)::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: var(--saffron); transition: width .25s; }
+.nav a:not(.btn):hover::after { width: 100%; }
+.nav-toggle { display: none; background: none; border: 0; padding: 10px; cursor: pointer; }
+.nav-toggle span { display: block; width: 24px; height: 2px; margin: 5px 0; background: var(--flour); transition: transform .3s, opacity .3s; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- 4. SEÇÕES ---------- */
+/* Hero: para foto real, adicione url("images/hero.jpg") no primeiro background */
+.hero {
+  min-height: 100svh; display: grid; place-items: center; text-align: center; padding: calc(var(--header-h) + 2rem) 0 3rem;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(214,69,43,.28), transparent 55%),
+    linear-gradient(180deg, #0f2016 0%, var(--basil) 100%);
+}
+.hero__content { animation: rise .9s ease-out both; } /* única animação de entrada da página */
+.hero__title { font-size: clamp(3.4rem, 14vw, 8rem); letter-spacing: -.02em; }
+.hero__slogan { font-family: var(--font-title); font-style: italic; font-size: clamp(1.2rem, 4vw, 1.9rem); color: var(--saffron); margin: .8rem 0 2.2rem; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+.section { padding: clamp(3.5rem, 9vw, 6rem) 0; }
+.section--alt { background: #0f2016; }
+.section__title { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: .5rem; }
+.section__lead { color: rgba(246,242,233,.75); margin: 0 0 2rem; }
+
+/* Abas de categorias */
+.tabs { display: flex; gap: .6rem; overflow-x: auto; padding-bottom: .5rem; margin-bottom: 2rem; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { flex: 0 0 auto; padding: .6rem 1.3rem; border-radius: 999px; border: 2px solid rgba(246,242,233,.3); background: transparent; color: var(--flour); font: 600 1rem var(--font-body); cursor: pointer; transition: background .2s, border-color .2s; }
+.tab:hover { border-color: var(--saffron); }
+.tab[aria-selected="true"] { background: var(--saffron); border-color: var(--saffron); color: var(--ink); }
+
+/* Cards de produto */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+.card { background: var(--basil-light); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; animation: fade .45s ease-out both; transition: transform .25s; }
+.card:hover { transform: translateY(-4px); }
+.card__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #24412f; }
+.card__body { padding: 1.1rem 1.2rem 1.3rem; display: flex; flex-direction: column; flex: 1; }
+.card__name { font-size: 1.3rem; }
+.card__desc { margin: .4rem 0 1rem; font-size: .95rem; color: rgba(246,242,233,.78); flex: 1; }
+.card__foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.card__price { font-family: var(--font-title); font-size: 1.4rem; font-weight: 700; color: var(--saffron); }
+@keyframes fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* Sobre nós */
+.about { max-width: 760px; }
+.about__text p { font-family: var(--font-title); font-size: 1.15rem; line-height: 1.8; margin: 0 0 1.2rem; color: rgba(246,242,233,.9); }
+
+/* Contato (fundo claro para dar respiro) */
+#contato { background: var(--flour); color: var(--ink); }
+.info { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.info__card { background: #fff; border-left: 5px solid var(--tomato); border-radius: var(--radius); padding: 1.4rem; box-shadow: 0 4px 18px rgba(0,0,0,.08); }
+.info__card h3 { font-size: 1.2rem; margin-bottom: .5rem; }
+.info__card p, .info__card address { margin: 0; font-style: normal; }
+.info__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.footer { background: #0b170f; text-align: center; padding: 1.5rem; font-size: .9rem; color: rgba(246,242,233,.6); }
+.footer p { margin: 0; }
+
+/* Botão flutuante do WhatsApp */
+.fab { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #fff; display: grid; place-items: center; box-shadow: 0 6px 20px rgba(0,0,0,.4); transition: transform .2s; }
+.fab:hover { transform: scale(1.08); }
+
+/* ---------- 5. RESPONSIVO ---------- */
+@media (max-width: 760px) {
+  .nav-toggle { display: block; }
+  .nav { position: fixed; inset: var(--header-h) 0 auto 0; flex-direction: column; gap: 1.2rem; padding: 1.5rem; background: rgba(15, 32, 22, .98); transform: translateY(-120%); transition: transform .3s; visibility: hidden; }
+  .nav.is-open { transform: none; visibility: visible; }
+  .header.menu-open { background: var(--basil); }
+  .hero__actions .btn { width: 100%; max-width: 320px; }
+  .info__actions .btn { width: 100%; }
+}
+@media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
