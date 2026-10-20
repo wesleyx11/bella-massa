@@ -7,10 +7,10 @@
 const CONFIG = {
   // Número com código do país + DDD, só dígitos. Ex.: Brasil, DDD 11 -> "5511999999999"
   // ATENÇÃO: este é um PLACEHOLDER. Troque pelo número real.
-  whatsappNumber: "5500000000000",
-  phoneDisplay: "[SUBSTITUIR: (00) 00000-0000]",
+  whatsappNumber: "554991255671",
+  phoneDisplay: "(49) 99125-5671]",
   // Texto usado para buscar o local no Google Maps. Troque pelo endereço real.
-  mapsQuery: "[SUBSTITUIR: endereço completo da pizzaria]",
+  mapsQuery: "Rua Marechal Bormann, 123, Centro, Chapecó - SC]",
   // Imagem usada quando a foto do produto não for encontrada
   fallbackImage: "images/placeholder.svg",
 };
